@@ -1,5 +1,5 @@
 const calculator = require('./calculator');
-const NoCalculatorFunctionNameError = require('./customExceptions');
+//const NoCalculatorFunctionNameError = require('./customExceptions');
 
 test('adds 1 + 2 to equal 3', () => {
   expect(calculator([1, 2],'add')).toBe(3);
@@ -26,9 +26,6 @@ test('doublefier [2,4,5] to be equal [4,8,10]', () => {
 });
 
 test("Operation not exists", () => {
-  let objectReturned = calculator([2,4,5],'zcdadaefier');
-  debugger
-  objectReturned.name = 'NoCalculatorFunctionName'
-  expect(objectReturned.name).toEqual('NoCalculatorFunctionName');
-  //expect(calculator([2,4,5],'zcdadaefier')).toThrow(NoCalculatorFunctionNameError);
+  
+  expect(calculator([2,4,5],'zcdadaefier')).toThrow('NoCalculatorFunctionNameError');
 });

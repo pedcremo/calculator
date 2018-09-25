@@ -32,9 +32,9 @@ function calculator(array_,operation_){
     let fOperation=operationObject[operation_];
     if (typeof fOperation !== "function") throw new NoCalculatorFunctionNameError(); 
     return operationObject[operation_](array_);   
-  } catch (error) {
+  } catch (error) {    
       console.log(error.name+" "+error.message);
-      return error;
+      return error.constructor;
   }
   
 }
