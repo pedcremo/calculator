@@ -25,7 +25,6 @@ test('doublefier [2,4,5] to be equal [4,8,10]', () => {
   expect(calculator([2,4,5],'doublefier')).toEqual([4,8,10]);
 });
 
-test("Operation not exists", () => {
-  
+test("Operation not exists", () => {  
   expect(calculator([2,4,5],'zcdadaefier')).toThrow('NoCalculatorFunctionNameError');
 });
