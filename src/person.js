@@ -1,16 +1,11 @@
-//const customExceptions = require('./customExceptions');
-//const calculatorFunctions = require('./calculatorFunctions');
-import {fAdd,fMultiplier,fDoublefier} from 'calculatorFunctions'
-import {NoCalculatorFunctionNameError,AccessDeniedError} from 'customExceptions';
+import {fAdd_,fMultiplier,fDoublefier} from './calculatorFunctions'
+import {NoCalculatorFunctionNameError,AccessDeniedError} from './customExceptions';
 
 const ROL={USER:'regular user',ADMIN:'root',TEACHER:'teacher'};
 
 let operationDictionary={
-    //'ADD':{ operator:calculatorFunctions.fAdd,roles:[ROL.USER,ROL.ADMIN,ROL.TEACHER]},
-    'ADD':{ operator:fAdd,roles:[ROL.USER,ROL.ADMIN,ROL.TEACHER]},
-    //'MULTIPLIER': { operator:calculatorFunctions.fMultiplier,roles:[ROL.ADMIN,ROL.TEACHER]},
+    'ADD':{ operator:fAdd_,roles:[ROL.USER,ROL.ADMIN,ROL.TEACHER]},
     'MULTIPLIER': { operator:fMultiplier,roles:[ROL.ADMIN,ROL.TEACHER]},
-    //'DOUBLEFIER': { operator:calculatorFunctions.fDoublefier,roles:[ROL.TEACHER]}
     'DOUBLEFIER': { operator:fDoublefier,roles:[ROL.TEACHER]}
   };
 
@@ -39,6 +34,3 @@ export default class Person {
           }
     }
 }
-
-
-//module.exports = Person

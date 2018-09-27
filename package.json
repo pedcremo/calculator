@@ -4,13 +4,21 @@
   "description": "calculator machine",
   "main": "calculator.js",
   "scripts": {
+    "dev":"webpack --mode development",
+    "build":"webpack --mode production",
     "test": "jest",
     "server": "node ./node_modules/http-server/bin/http-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.3",
+    "babel-preset-env": "^1.7.0",
     "http-server": "^0.11.1",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
   }
 }

@@ -1,4 +1,4 @@
-const calculator = require('./calculatorFunctions');
+const calculator = require('../src/calculatorFunctions');
 
 test('adds 1 + 2 to equal 3', () => {  
   expect(calculator.fAdd([1, 2])).toBe(3);
