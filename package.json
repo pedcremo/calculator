@@ -4,11 +4,13 @@
   "description": "calculator machine",
   "main": "calculator.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "server":"node node_modules/http-server/bin/http-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^0.11.1",
     "jest": "^23.6.0"
   }
 }
