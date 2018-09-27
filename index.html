@@ -4,17 +4,20 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>title</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <script type="text/javascript" src="person.js"></script>
     <script type="text/javascript" src="customExceptions.js"></script>
     <script type="text/javascript" src="calculatorFunctions.js"></script>
-    <script type="text/javascript" src="person.js"></script>
+    
 
     <script>
-        
+      let paco = new Person("Paco","ElMaco",Person.getRoles().USER);
+      let paca = new Person("Paca","LaMaca",Person.getRoles().TEACHER);
+      let root = new Person("Root","Toot",Person.getRoles().ADMIN);
     </script>
   </head>
   <body>
-      <h1>Calculator buff!</h1>
+      <h1>Calculator buffa!</h1>
       <form>
         <select>
                 <option value="volvo">Volvo</option>
