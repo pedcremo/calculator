@@ -5,4 +5,13 @@ class NoCalculatorFunctionNameError extends Error {
   }
 }
 
-module.exports = NoCalculatorFunctionNameError;
+class AccessDeniedError extends Error {
+  constructor() {
+    super("You are not member of a rol that is allowed to execute such function");
+    this.name = 'AccessDeniedName';
+  }
+}
+module.exports = {
+  NoCalculatorFunctionNameError : NoCalculatorFunctionNameError,
+  AccessDeniedError : AccessDeniedError
+}
