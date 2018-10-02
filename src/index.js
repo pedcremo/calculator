@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",function(){
     let changeEvent = new Event('change');
     let selectPerson = document.getElementById("selectPerson");
     selectPerson.addEventListener("change",changedPerson);    
+    document.getElementById("selectFunction").addEventListener("change",changedFunction);    
        
     persons.forEach((item)=>{
         let o = document.createElement("option");
@@ -19,8 +20,9 @@ document.addEventListener("DOMContentLoaded",function(){
         selectPerson.appendChild(o);
     });    
    if (!selectedOperation)  selectPerson.dispatchEvent(changeEvent); //Force first trigger 
-   let newOperand = document.getElementById("newOperand");
+   let newOperand = document.getElementById("buttonNewOperand");
    newOperand.addEventListener("click",addOperandInput);    
+   document.getElementById("buttonCalculate").addEventListener("click",calculate);
 });
 
 function changedPerson(event){
@@ -42,7 +44,9 @@ function changedPerson(event){
         selectRoles.appendChild(o);
     });   
 };
-
+function changedFunction(event) {
+    selectedOperation = event.target.value;
+}
 function addOperandInput(event){
     const divOperands = document.getElementById('operands');
     let newInput = document.createElement("input"); 
@@ -51,5 +55,23 @@ function addOperandInput(event){
     
     newInput.setAttribute("type","number");
     newInput.setAttribute("name","foperand"+divOperands.children.length);
+    divOperands.appendChild(t);
     divOperands.appendChild(newInput);
+    divOperands.appendChild(newBr);
+
 };
+
+function calculate() {
+    let inputsOperands=document.querySelectorAll('input[type=number]');
+    let iOps=[];
+    //Put input operands values ian an array 
+    [].forEach.call(inputsOperands,function(item){
+        iOps.push(parseInt(item.value));
+    });
+   
+    let selectedPerson = document.getElementById("selectPerson");
+    let selectedPersonValue = selectedPerson.options[selectedPerson.selectedIndex].value;
+    let calculatedValue=persons.get(selectedPersonValue).calculator(iOps,selectedOperation.name);
+    document.getElementById("hResult").innerHTML="Result: "+calculatedValue;
+
+}
