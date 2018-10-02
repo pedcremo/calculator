@@ -3,11 +3,11 @@ import {NoCalculatorFunctionNameError,AccessDeniedError} from './customException
 
 const ROL={USER:'regular user',ADMIN:'root',TEACHER:'teacher'};
 
-let operationDictionary={
-    'ADD':{ operator:fAdd_,roles:[ROL.USER,ROL.ADMIN,ROL.TEACHER]},
-    'MULTIPLIER': { operator:fMultiplier,roles:[ROL.ADMIN,ROL.TEACHER]},
-    'DOUBLEFIER': { operator:fDoublefier,roles:[ROL.TEACHER]}
-  };
+let operationDictionary=[
+    {name:'ADD', operator:fAdd_,roles:[ROL.USER,ROL.ADMIN,ROL.TEACHER]},
+    {name:'MULTIPLIER', operator:fMultiplier,roles:[ROL.ADMIN,ROL.TEACHER]},
+    {name:'DOUBLEFIER', operator:fDoublefier,roles:[ROL.TEACHER]}
+];
 
 export default class Person {    
          
@@ -23,7 +23,7 @@ export default class Person {
 
     calculator(operands=[0],operator='ADD'){
         try {            
-            let chosenOperation=operationDictionary[operator];
+            let chosenOperation=operationDictionary.filter(item => item.name===operator)[0];//We only get first matched item
             if (!chosenOperation || typeof chosenOperation.operator !== "function") throw new NoCalculatorFunctionNameError(); 
             if (!chosenOperation.roles.includes(this.rol)) throw new AccessDeniedError(); 
             
