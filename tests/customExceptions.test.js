@@ -1,4 +1,4 @@
-const customExceptions = require('./customExceptions');
+const customExceptions = require('../src/customExceptions');
 
 it('NoCalculatorFunctionNameError constructor', () => {
     const ceNo = new customExceptions.NoCalculatorFunctionNameError();
