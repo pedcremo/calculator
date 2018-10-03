@@ -5,7 +5,7 @@ persons.set('PacoElMaco',new Person("Paco","ElMaco",Person.getRoles().USER));
 persons.set('PacaLaMaca',new Person("Paca","LaMaca",Person.getRoles().TEACHER));
 persons.set('RootToot',new Person("Root","Toot",Person.getRoles().ADMIN));
 
-let selectedOperation=''
+let selectedOperation='';
 
 document.addEventListener("DOMContentLoaded",function(){
     let changeEvent = new Event('change');
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded",function(){
    document.getElementById("buttonCalculate").addEventListener("click",calculate);
 });
 
+//When select drop down HTML component changes we call it
 function changedPerson(event){
     let targetValue;
     if (!event) {
@@ -36,7 +37,7 @@ function changedPerson(event){
     let roles = selectedPerson.getAllowedFunctions();
     let selectRoles = document.getElementById("selectFunction");
     selectRoles.innerHTML = "";
-    selectedOperation=roles[0];
+    selectedOperation=roles[0].name;
     roles.forEach((item)=>{
         let o = document.createElement("option");
         o.text = item.name;
@@ -51,7 +52,7 @@ function addOperandInput(event){
     const divOperands = document.getElementById('operands');
     let newInput = document.createElement("input"); 
     let newBr = document.createElement("br"); 
-    let t = document.createTextNode("Operand:");
+    let t = document.createTextNode("Operand: ");
     
     newInput.setAttribute("type","number");
     newInput.setAttribute("name","foperand"+divOperands.children.length);
@@ -71,7 +72,7 @@ function calculate() {
    
     let selectedPerson = document.getElementById("selectPerson");
     let selectedPersonValue = selectedPerson.options[selectedPerson.selectedIndex].value;
-    let calculatedValue=persons.get(selectedPersonValue).calculator(iOps,selectedOperation.name);
+    let calculatedValue=persons.get(selectedPersonValue).calculator(iOps,selectedOperation);
     document.getElementById("hResult").innerHTML="Result: "+calculatedValue;
 
 }
