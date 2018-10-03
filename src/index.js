@@ -65,7 +65,7 @@ function addOperandInput(event){
 function calculate() {
     let inputsOperands=document.querySelectorAll('input[type=number]');
     let iOps=[];
-    //Put input operands values ian an array 
+    //Put input operands values into an array 
     [].forEach.call(inputsOperands,function(item){
         iOps.push(parseInt(item.value));
     });

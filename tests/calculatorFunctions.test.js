@@ -1,11 +1,11 @@
 const calculator = require('../src/calculatorFunctions');
 
 test('adds 1 + 2 to equal 3', () => {  
-  expect(calculator.fAdd([1, 2])).toBe(3);
+  expect(calculator.fAdd_([1, 2])).toBe(3);
 });
 
 test('adds 1 + 2 + 3 ...+ 9  to equal 45', () => {
-  expect(calculator.fAdd([1,2,3,4,5,6,7,8,9])).toBe(45);
+  expect(calculator.fAdd_([1,2,3,4,5,6,7,8,9])).toBe(45);
 });
 
 test('multiplier 3 * 3 to equl 9', () => {
