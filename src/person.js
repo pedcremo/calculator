@@ -30,7 +30,7 @@ export default class Person {
             return chosenOperation.operator(operands);   
         } catch (error) {    
               console.log(error.name+" "+error.message);
-              return error.constructor;
+              throw error;
         }
     }
 

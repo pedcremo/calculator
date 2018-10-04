@@ -13,10 +13,10 @@ it('We can check if paco person with rol user can access calculator', () => {
 
 it('We can check if paco person with rol user can access calculator multiplier', () => {
   let paco = new Person("Paco","ElMaco",Person.getRoles().USER);
-  expect(paco.calculator([2,3,5],'MULTIPLIER')).toThrow('AccessDeniedError');
+  expect(function(){paco.calculator([2,3,5],'MULTIPLIER')}).toThrowError(/AccessDeniedName/);
 });
 
 it('We can check if paco person with rol user can not access an inexistent function', () => {
   let paco = new Person("Paco","ElMaco",Person.getRoles().USER);
-  expect(paco.calculator([2,3,5],'zdffdfd')).toThrow('NoCalculatorFunctionNameError');
+  expect(paco.calculator([2,3,5],'zdffdfd')).toThrowError(/NoCalculatorFunctionName/);
 });
