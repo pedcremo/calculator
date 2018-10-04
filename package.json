@@ -4,10 +4,10 @@
   "description": "calculator machine",
   "main": "calculator.js",
   "scripts": {
-    "dev": "webpack --mode development --module-bind js=babel-loader",
-    "build": "webpack --mode production --module-bind js=babel-loader",
-    "test": "jest",
-    "server": "node ./node_modules/http-server/bin/http-server"
+    "start":"node ./src/server.js",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "test": "jest"    
   },
   "author": "",
   "license": "ISC",
@@ -16,10 +16,15 @@
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.4",
-    "http-server": "^0.11.1",
+    "babel-loader": "^8.0.4",    
     "jest": "^23.6.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.1"
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-hot-middleware": "^2.24.2"
+  },
+  "jest":{
+    "transform":{ "^.+\\.jsx?$": "babel-jest"}
   }
 }

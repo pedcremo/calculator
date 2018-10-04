@@ -1,7 +1,8 @@
 import Person from './person';
 
 let persons = new Map();
-persons.set('PacoElMaco',new Person("Paco","ElMaco",Person.getRoles().USER));
+persons.set('HilarioGerre2',new Person("Hilario","Gerre2",Person.getRoles().ADMIN));
+persons.set('PacooElMaco',new Person("Pacoo","ElMaco",Person.getRoles().USER));
 persons.set('PacaLaMaca',new Person("Paca","LaMaca",Person.getRoles().TEACHER));
 persons.set('RootToot',new Person("Root","Toot",Person.getRoles().ADMIN));
 persons.set('HilarioGerre',new Person("Hilario","Gerre",Person.getRoles().ADMIN));
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded",function(){
     let changeEvent = new Event('change');
     let selectPerson = document.getElementById("selectPerson");
     selectPerson.addEventListener("change",changedPerson);    
-    document.getElementById("select Function").addEventListener("change",changedFunction);    
+    document.getElementById("selectFunction").addEventListener("change",changedFunction);    
        
     persons.forEach((item)=>{
         let o = document.createElement("option");
