@@ -7,9 +7,9 @@ persons.set('RootToot',new Person("Root","Toot",Person.getRoles().ADMIN));
 persons.set('HilarioGerre',new Person("Hilario","Gerre",Person.getRoles().ADMIN));
 
 let selectedOperation='';
-console.log("JJJJJ");
+
 document.addEventListener("DOMContentLoaded",function(){
-    console.log("ESTEM ACI");
+
     let changeEvent = new Event('change');
     let selectPerson = document.getElementById("selectPerson");
     selectPerson.addEventListener("change",changedPerson);    
