@@ -8,6 +8,15 @@ let operationDictionary=[
     {name:'MULTIPLIER', operator:fMultiplier,roles:[ROL.ADMIN,ROL.TEACHER]},
     {name:'DOUBLEFIER', operator:fDoublefier,roles:[ROL.TEACHER]}
 ];
+/**
+ * Person class. We store personal information 
+ *
+ * @constructor
+ * @param {string} name - Person name
+ * @param {string} surname - Person surname
+ * @param {string} rol - Person rol group   
+ * @tutorial pointing-criteria
+ */
 
 export default class Person {    
          
@@ -16,11 +25,12 @@ export default class Person {
         this.surname = surname;
         this.rol = rol;    
     }
-
+    /** Static method to obtain available roles */
     static getRoles(){
         return ROL;
     }
 
+    /** Let me to operate over some operands applying the operator functions if my rol is granted */
     calculator(operands=[0],operator='ADD'){
         try {            
             let chosenOperation=operationDictionary.filter(item => item.name===operator)[0];//We only get first matched item
@@ -33,7 +43,7 @@ export default class Person {
               throw error;
         }
     }
-
+    /** Get an array of allowed functions to be used in calculator */
     getAllowedFunctions() {
         return operationDictionary.filter(item => item.roles.includes(this.rol));
     }

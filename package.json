@@ -7,6 +7,7 @@
     "start": "node ./src/server.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
+    "doc": "jsdoc -c jsdoc.json README src/*",
     "test": "jest --env=jsdom"
   },
   "author": "",
@@ -19,6 +20,7 @@
     "babel-loader": "^8.0.4",
     "jest": "^23.6.0",
     "jquery": "^3.3.1",
+    "jsdoc": "^3.5.5",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-middleware": "^3.4.0",
