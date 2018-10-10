@@ -15,6 +15,8 @@ Could be used as a base to develop any other javascript project during the cours
 
 NICE TO READ https://www.valentinog.com/blog/webpack-tutorial/
 
+#Ajax and fetch API 
+NICE TO READ: https://dev.to/bjhaid_93/beginners-guide-to-fetching-data-with-ajax-fetch-api--asyncawait-3m1l
 
 #TIPS
 To solve some jest testing problems I've been forced to install
