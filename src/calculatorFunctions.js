@@ -5,7 +5,7 @@ let fMultiplier = function(array_) {
 } 
 
 //It doubles every single item of the array
-let fDoublefier = function(array_){
+let fDoublefier = function(array_){  
   return array_.map(function(valorActual){
     return valorActual*2;
   });

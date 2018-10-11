@@ -1,0 +1,11 @@
+[{
+    "name": "Minimum",
+    "operator": "function maxNum(array_){ return Math.min(...array_); }",
+    "roles": ["regular user", "teacher"]
+},
+{
+    "name": "Maximum",
+    "operator": "function minNum(array_){ return Math.max(...array_); }",
+    "roles": ["teacher"]
+}
+]

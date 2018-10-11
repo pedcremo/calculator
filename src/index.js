@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded",function(){
    let newOperand = document.getElementById("buttonNewOperand");
    newOperand.addEventListener("click",addOperandInput);    
    document.getElementById("buttonCalculate").addEventListener("click",calculate);
+   document.getElementById("buttonNewFunctions").addEventListener("click",
+                function(){
+                    Person.getNewFunctions(function(){
+                        selectPerson.dispatchEvent(changeEvent);
+                    });
+                    
+                });
 });
 
 //When select drop down HTML component changes we call it
@@ -50,6 +57,7 @@ function changedPerson(event){
 function changedFunction(event) {
     selectedOperation = event.target.value;
 }
+
 function addOperandInput(event){
     const divOperands = document.getElementById('operands');
     let newInput = document.createElement("input"); 
