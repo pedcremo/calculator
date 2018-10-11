@@ -19,7 +19,8 @@ beforeEach(()=> {
   '<br><br>'+
 
   '<button type="button" id="buttonCalculate">CALCULTATE!</button>'+
-  
+  '<button type="button" id="buttonNewFunctions">GET NEW FUNCTIONS!</button>'+
+       
    '</form>'+
 '<h1 id="hResult">Result:</h1>';
 
